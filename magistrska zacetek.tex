@@ -1,0 +1,86 @@
+% !TEX TS-program = pdflatex
+% !TEX encoding = UTF-8 Unicode
+
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc} 
+\usepackage[slovene]{babel}
+\usepackage{lmodern}
+\usepackage{geometry}
+\geometry{a4paper} 
+\usepackage{graphicx}
+
+%%% PACKAGES
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{latexsym}
+\usepackage{mathtools}
+\usepackage{bbm}
+\usepackage{float}
+
+\newtheorem{definition}{Definicija}
+\newtheorem{example}{Primer}
+\newtheorem{theorem}{Izrek}
+\newtheorem{lem}{Lema}
+\newtheorem{prop}{Trditev}
+\newtheorem{cor}{Posledica}
+\newtheorem{remark}{Opomba}
+
+\title{Magistrsko dela}
+\author{Jaša Štefan}
+
+
+
+
+
+
+\begin{document}
+\maketitle
+
+\section{CLI}
+\begin{theorem}{centralni limitni izrek - osnovna (klasična) verzija}
+
+Naj bo $\{X_1, X_2, \dots, X_n\}$ zaporedje $n$ neodvisnih in enako porazdeljenih slučajnih spremenljivk z matematičnim upanjem $\mu$ in varianco $\sigma$. Naj bo slučajna spremenljivka $Z$ definirana kot $Z = \frac{\bar{X} - \mu}{\sigma / \sqrt{n}}$.  Potem je v limiti, ko $n \rightarrow \infty$, slučajna spremenljivka $Z$ porazdeljena standardno normalno.
+\end{theorem}
+
+Izrek je zelo močan, saj pomeni, da tudi če delamo z drugače porazdeljenimi slučajnimi spremenljivkami, njihova standardizirana vsota vseeno konvergira k standardno normalni porazdelitvi. Zaradi tega lahko za statistično obdelavo (obravnavo) vsote teh spremenljivk uporabimo orodja in metode, katere uporabljamo že pri standardno normalnih porazdelitvah. 
+
+
+\section{Kolmogorov- Smirnova razdalja}
+
+
+
+\section{Berry - Esseenov izrek}
+Berry - Esseenov izrek oziroma neenakost nam pove, kako hitro porazdelitev standardiziranega povprečja konvergira proti normalni porazdelitvi, s tem ko omeji največjo napako aproksimacije med obema porazdelitvama. Točnost aproksimacije se meri z Kolmogorov-Smirnovo razdaljo. V primeru, da gre za neodvisne vzorce (slučajne spremenljivke), je hitrost konvergence $n^{-\frac{1}{2}}$. Konstanto ocenimo s pomočjo koeficienta simetrije. Trenutno je zgornja meja za konstanto 0,4748, spodnja meja pa 0,40973.
+
+\begin{theorem}{Berry - Esseenov izrek - 1. verzija  (poenostavljena)}
+Naj bodo $X_1, X_2, \dots ,X_n$ neodvisne in enako porazdeljene slučajne spremenljivke z $E[X_1] = 0, E[X_1^2] = \sigma^2$ in $E[X_1^3] = \rho$, pri čemer $\sigma > 0$ in $\rho < \infty$.  Definirajmo slučajno spremenljivko $Y_n$, ki je vzorčno povprečje, $Y_n = \frac{X_1 + X_2+ \dots +X_n}{n}$. 
+Nadalje definirajmo komulativno porazdelitveno funkcijo $F_n$ slučajne spremenljivke $\frac{Y_n}{\sigma\sqrt{n}}$, s $\Phi$ pa označimo komulativno porazdelitveno funkcijo standardno normalne porazdelitve. 
+
+Potem obstaja konstanta $C, C>0$, da velja 
+$$ |F_n(x) - \Phi(x)| \leq \frac{C \rho}{\sigma^3\sqrt{n}}.$$
+\end{theorem}
+
+%\subsection{A subsection}
+\begin{example}
+Denimo, da igramo igro, kjer so možne vrednosti $0,1,\dots, 36$ in je verjetnost vsake izmed njih enaka. Denimo še, da igro ponovimo tisočkrat in so igre med sabo neodvisne.
+
+Izračunamo $E[X_1] = 18, var(X_1) = 114, skew(X_1) = 0$.
+Definiramo $X'_i = X_i - 18$. Velja $E[X'_1] = 18, var(X'_1) = 114, skew(X'_1) = 0$.
+
+Definiramo še $Y_n = \frac{X'_1 +X'_2 +\dots +X'_{1000}}{1000}$, $F_n$ pa naj bo definirana kot zgoraj.
+
+Sledi $$|F_n(x) - \Phi(x)| \leq \frac{C \sqrt{114}}{\sigma^3\sqrt{n}}.$$
+
+
+
+\end{example}
+
+
+\end{document}
