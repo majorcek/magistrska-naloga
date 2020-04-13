@@ -1,6 +1,6 @@
 library(ggplot2)
 
-c <- 3.0
+c <- 0.5
 
 vrednosti <- c(-1, 35)
 verjetnosti <- c(36/37, 1/37)
@@ -49,4 +49,5 @@ ggplot(data = tabela_uspeha) +
     "verjetnost" = 'red', 
     "zgornja meja" = 'darkgreen',
     "spodnja meja" = 'brown')) + 
-  labs(color = "")
+  labs(title = "Verjetnost, da pri ruleti po n metih ne končamo v minusu",
+       color = "")

@@ -63,7 +63,8 @@ ggplot(data = zbrane_verjetnosti) +
   scale_color_manual(values = c(
     "podatki iz rulete" = 'blue', 
     "normalna porazdelitev" = 'orange')) + 
-  labs(color = "")
+  labs(title = "primerjava vzorca z normalno porazdelitvijo ",
+       x = "x", y = "P(X<=x)", color = "")
 
 
   
