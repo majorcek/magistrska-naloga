@@ -65,7 +65,7 @@ V primeru, da gre za neodvisne vzorce (slučajne spremenljivke), je hitrost konv
 Izrek je zelo močan tudi zato, ker potrebujemo samo prve tri centralne momente.
 
 \begin{theorem}{Berry - Esseenov izrek}
-Naj bodo $X_1, X_2, \dots ,X_n$ neodvisne in enako porazdeljene slučajne spremenljivke z $E[X_1] = 0, E[X_1^2] = \sigma^2$ in $E[X_1^3] = \rho$, pri čemer $\sigma > 0$ in $\rho < \infty$.  Definirajmo slučajno spremenljivko $Y_n$, ki je vzorčno povprečje, $Y_n = \frac{X_1 + X_2+ \dots +X_n}{n}$. 
+Naj bodo $X_1, X_2, \dots ,X_n$ neodvisne in enako porazdeljene slučajne spremenljivke z $E[X_1] = 0$, $E[X_1^2] = \sigma^2$ in $E[X_1^3] = \rho$, pri čemer $\sigma > 0$ in $\rho < \infty$.  Definirajmo slučajno spremenljivko $Y_n$, ki je normalizirano povprečje, $Y_n = \frac{X_1 + X_2+ \dots +X_n}{\sigma\sqrt{n}}$. 
 Nadalje definirajmo komulativno porazdelitveno funkcijo $F_n$ slučajne spremenljivke $\frac{Y_n}{\sigma\sqrt{n}}$, s $\Phi$ pa označimo komulativno porazdelitveno funkcijo standardno normalne porazdelitve. 
 
 Potem obstaja konstanta $C, C>0$, da velja 
@@ -74,15 +74,15 @@ $$ |F_n(x) - \Phi(x)| \leq \frac{C \rho}{\sigma^3\sqrt{n}}.$$
 
 
 \begin{example}{RULETA}
+
 Igramo igro, kjer so možne vrednosti $0,1,\dots, 36$ in je verjetnost vsake izmed njih enaka. Vsakič napovemo 1 cifro. V primeru, da zadenemo, dobimo 35 enot, sicer 1 enoto izgubimo. Igro ponovimo tisočkrat, rezultati so med seboj neodvisni. 
 
-Naj $X_1, X_2, \dots , X_3$  označujejo dobitek v vsaki igri.
+\vspace{3mm}
+\noindent
+Naj $X_1, X_2, \dots , X_3$  označujejo dobitek v vsaki igri. Izračunamo $E[X_1] = - \frac{1}{37}$, ${var(X_1) = 34,080}$ in $skew(X_1) = 1162,366$.
 
-Izračunamo $E[X_1] = - \frac{1}{37}, var(X_1) = 34,080$ in $skew(X_1) = 1162,366$.
-
+\vspace{3mm}\noindent
 Definiramo  $Y_n = \frac{X_1 +X_2 +\dots +X_{1000} - n\mu}{\sigma \sqrt{n}}$, $F_n$ pa naj bo definirana kot zgoraj.
-
-Sledi $$|F_n(x) - \Phi(x)| \leq \frac{C \cdot 1162,366}{\sigma^3 \sqrt{n}}.$$
 
 Za $C= 0.5$ dobimo rezultat  
 $$|F_n(x) - \Phi(x)| \leq \frac{2.921}{\sqrt{n}}.$$
@@ -99,3 +99,21 @@ $$|F_n(x) - \Phi(x)| \leq \frac{2.921}{\sqrt{n}}.$$
     \includegraphics[width=300px]{primerjava_z_normalno.png}
 \end{figure}
 \end{document}
+
+
+
+
+
+
+
+
+
+
+\begin{thebibliography}{9}
+\bibitem{Feller} 
+William Feller.
+\textit{An Introduction to Probability Theory and Its Applications, Vol. 2, second edition}.
+John Wiley & Sons, Inc.; New York, 1971.
+
+
+\end{thebibliography}
